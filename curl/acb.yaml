@@ -1,0 +1,12 @@
+steps:
+  # Build the image
+  - build: -f Dockerfile -t {{.Run.Registry}}/curl .
+
+  # Print out the version
+  - cmd: {{.Run.Registry}}/curl -V
+
+  # Perform a GET on a website
+  - cmd: {{.Run.Registry}}/curl -sSL microsoft.com
+
+  # Push the image
+  - push: ["{{.Run.Registry}}/curl"]
