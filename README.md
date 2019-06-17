@@ -4,4 +4,4 @@ This repository contains the source code for commonly used commands used by [Azu
 
 ## Contributing
 
-If you encounter an issue using these commands or want to have a new feature added, please [create an issue in this repository](https://github.com/AzureCR/acr-task-commands/issues) or open a pull request.
+If you encounter an issue using these commands or want to have a new feature added, please [create an issue in this repository](https://github.com/Azure/acr-task-commands/issues) or open a pull request.
