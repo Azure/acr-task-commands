@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM alpine:3.10
+LABEL maintainer=acr-feedback@microsoft.com
 
-RUN apt-get update && \
-  apt-get -y install curl ca-certificates
+RUN apk add --no-cache curl
 
-ENTRYPOINT ["curl"]
+ENTRYPOINT ["/usr/bin/curl"]
