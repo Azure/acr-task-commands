@@ -1,0 +1,15 @@
+steps:
+  # Build the image
+  - build: -f Dockerfile -t {{.Run.Registry}}/az .
+
+  # Print out the version
+  - cmd: {{.Run.Registry}}/az --version
+
+  # Login to az
+  - cmd: {{.Run.Registry}}/az login --identity
+
+  # Check your images in ACR
+  - cmd: {{.Run.Registry}}/az acr list -o table
+
+  # Push the image
+  - push: ["{{.Run.Registry}}/az"]
