@@ -1,6 +1,6 @@
-# curl
+# az
 
-This image invokes [curl](https://www.gnu.org/software/curl/). Any arguments provided to this image are passed to curl.
+This image invokes [az](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Any arguments provided to this image are passed to az.
 
 ## Building
 

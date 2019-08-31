@@ -1,0 +1,9 @@
+steps:
+  # Build the image
+  - build: -f Dockerfile -t {{.Run.Registry}}/bash .
+
+  # Perform a GET on a website
+  - cmd: {{.Run.Registry}}/bash -c "echo 'Hello, ACR Tasks'"
+
+  # Push the image
+  - push: ["{{.Run.Registry}}/bash"]

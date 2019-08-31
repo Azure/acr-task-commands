@@ -1,6 +1,6 @@
-# curl
+# bash
 
-This image invokes [curl](https://www.gnu.org/software/curl/). Any arguments provided to this image are passed to curl.
+This image invokes [bash](https://www.gnu.org/software/bash/). Any arguments provided to this image are passed to bash.
 
 ## Building
 
