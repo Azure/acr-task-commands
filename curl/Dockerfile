@@ -1,6 +1,4 @@
-FROM alpine:3.15
+FROM mcr.microsoft.com/cbl-mariner/base/core:2.0
 LABEL maintainer=acr-feedback@microsoft.com
-
-RUN apk add --no-cache curl
 
 ENTRYPOINT ["/usr/bin/curl"]
