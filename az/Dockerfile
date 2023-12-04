@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/cbl-mariner/base/azure-cli:2.53
+FROM mcr.microsoft.com/azure-cli:2.54.0-cbl-mariner2.0
 LABEL maintainer=acr-feedback@microsoft.com
 CMD [ "--version" ]
 ENTRYPOINT [ "az" ]
