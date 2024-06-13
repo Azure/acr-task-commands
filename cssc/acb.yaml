@@ -1,0 +1,10 @@
+version: v1.1.0
+
+steps:
+  # Build the image
+  - build: -f Dockerfile -t {{.Run.Registry}}/cssc .
+
+  - cmd: {{.Run.Registry}}/cssc acr --help
+
+  # Push the image
+  - push: ["{{.Run.Registry}}/cssc"]
