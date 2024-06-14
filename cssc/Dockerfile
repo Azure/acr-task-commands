@@ -10,6 +10,8 @@ RUN curl --retry 5 -fsSL -o copa.tar.gz https://github.com/project-copacetic/cop
     tar -zxvf copa.tar.gz && \
     cp copa /tmp/bin/
 RUN cp /usr/bin/acr /tmp/bin/
+COPY docker-entrypoint.sh /tmp/bin/
+RUN chmod +x /tmp/bin/docker-entrypoint.sh
 
 FROM mcr.microsoft.com/cbl-mariner/base/core:2.0
 LABEL maintainer=acr-feedback@microsoft.com
@@ -19,5 +21,4 @@ RUN tdnf check-update \
         moby-cli moby-containerd \
     && tdnf clean all
 COPY --from=build /tmp/bin/ /usr/bin/
-COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
