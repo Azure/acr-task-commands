@@ -1,6 +1,6 @@
 # cssc
 
-This image is for cssc workflow commands and contains acr, trivy and copa
+This image is for cssc workflow commands and contains acr, oras, trivy and copa
 
 ## Building
 

@@ -1,5 +1,7 @@
 ARG acr_version=0.11
-FROM mcr.microsoft.com/acr/acr-cli:$acr_version as build
+ARG oras_version=1.2.0
+FROM ghcr.io/oras-project/oras:v${oras_version} as oras
+FROM mcr.microsoft.com/acr/acr-cli:${acr_version} as build
 ARG copa_version=0.6.2
 ARG trivy_version=0.51.4
 RUN tdnf check-update \
@@ -12,6 +14,7 @@ RUN curl --retry 5 -fsSL -o copa.tar.gz https://github.com/project-copacetic/cop
 RUN cp /usr/bin/acr /tmp/bin/
 COPY docker-entrypoint.sh /tmp/bin/
 RUN chmod +x /tmp/bin/docker-entrypoint.sh
+COPY --from=oras /bin/oras /tmp/bin/
 
 FROM mcr.microsoft.com/cbl-mariner/base/core:2.0
 LABEL maintainer=acr-feedback@microsoft.com
