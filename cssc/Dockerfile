@@ -17,7 +17,7 @@ LABEL maintainer=acr-feedback@microsoft.com
 RUN tdnf check-update \
     && tdnf --refresh install -y \
         ca-certificates-microsoft \
-        moby-cli moby-containerd \
+        moby-cli moby-containerd jq\
     && tdnf clean all
 COPY --from=build /tmp/bin/ /usr/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
