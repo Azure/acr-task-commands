@@ -1,4 +1,4 @@
-ARG acr_version=0.11
+ARG acr_version=0.12
 ARG oras_version=1.2.0
 FROM ghcr.io/oras-project/oras:v${oras_version} as build
 ARG copa_version=0.6.2
