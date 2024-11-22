@@ -2,7 +2,7 @@ ARG acr_version=0.14
 ARG oras_version=1.2.0
 FROM ghcr.io/oras-project/oras:v${oras_version} as build
 ARG copa_version=0.6.2
-ARG trivy_version=0.51.4
+ARG trivy_version=0.57.0
 ARG syft_version=1.11.1
 RUN apk add curl tar gzip
 RUN curl --retry 5 -fsSL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /tmp/bin v${syft_version}
