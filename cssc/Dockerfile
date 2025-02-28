@@ -16,6 +16,8 @@ RUN chmod +x /tmp/bin/docker-entrypoint.sh & cp /bin/oras /tmp/bin/
 
 FROM mcr.microsoft.com/acr/acr-cli:${acr_version}
 LABEL maintainer=acr-feedback@microsoft.com
+ENV EXPERIMENTAL_BUILDKIT_SOURCE_POLICY="/app/source-policy.json"
+COPY source-policy.json /app/source-policy.json
 RUN tdnf check-update \
     && tdnf --refresh install -y \
         ca-certificates-microsoft \

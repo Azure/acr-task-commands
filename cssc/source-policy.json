@@ -1,0 +1,22 @@
+{
+    "rules": [
+      {
+        "action": "CONVERT",
+        "selector": {
+          "identifier": "docker-image://docker.io/library/debian:*"
+        },
+        "updates": {
+          "identifier": "docker-image://mcr.microsoft.com/mirror/docker/library/debian:${1}"
+        }
+      },
+      {
+        "action": "CONVERT",
+        "selector": {
+          "identifier": "docker-image://docker.io/library/ubuntu:*"
+        },
+        "updates": {
+          "identifier": "docker-image://mcr.microsoft.com/mirror/docker/library/ubuntu:${1}"
+        }
+      }
+    ]
+  }
