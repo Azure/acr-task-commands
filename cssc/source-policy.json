@@ -1,22 +1,58 @@
 {
-    "rules": [
-      {
-        "action": "CONVERT",
-        "selector": {
-          "identifier": "docker-image://docker.io/library/debian:*"
-        },
-        "updates": {
-          "identifier": "docker-image://mcr.microsoft.com/mirror/docker/library/debian:${1}"
-        }
+  "rules": [
+    {
+      "action": "CONVERT",
+      "selector": {
+        "identifier": "docker-image://docker.io/library/debian:*"
       },
-      {
-        "action": "CONVERT",
-        "selector": {
-          "identifier": "docker-image://docker.io/library/ubuntu:*"
-        },
-        "updates": {
-          "identifier": "docker-image://mcr.microsoft.com/mirror/docker/library/ubuntu:${1}"
-        }
+      "updates": {
+        "identifier": "docker-image://mcr.microsoft.com/mirror/docker/library/debian:${1}"
       }
-    ]
-  }
+    },
+    {
+      "action": "CONVERT",
+      "selector": {
+        "identifier": "docker-image://docker.io/library/ubuntu:*"
+      },
+      "updates": {
+        "identifier": "docker-image://mcr.microsoft.com/mirror/docker/library/ubuntu:${1}"
+      }
+    },
+    {
+      "action": "CONVERT",
+      "selector": {
+        "identifier": "docker-image://ghcr.io/project-copacetic/copacetic/debian:*"
+      },
+      "updates": {
+        "identifier": "docker-image://mcr.microsoft.com/mirror/docker/library/debian:${1}"
+      }
+    },
+    {
+      "action": "CONVERT",
+      "selector": {
+        "identifier": "docker-image://ghcr.io/project-copacetic/copacetic/ubuntu:*"
+      },
+      "updates": {
+        "identifier": "docker-image://mcr.microsoft.com/mirror/docker/library/ubuntu:${1}"
+      }
+    },
+    {
+      "action": "CONVERT",
+      "selector": {
+        "identifier": "docker-image://ghcr.io/project-copacetic/copacetic/azurelinux/base/core"
+      },
+      "updates": {
+        "identifier": "docker-image://mcr.microsoft.com/azurelinux/base/core"
+      }
+    },
+    {
+      "action": "CONVERT",
+      "selector": {
+        "identifier": "docker-image://ghcr.io/project-copacetic/copacetic/cbl-mariner/base/core:2.0"
+      },
+      "updates": {
+        "identifier": "docker-image://mcr.microsoft.com/cbl-mariner/base/core:2.0"
+      }
+    }
+  ]
+}
