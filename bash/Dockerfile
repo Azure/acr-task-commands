@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/cbl-mariner/base/core:2.0
+FROM mcr.microsoft.com/azurelinux/base/core:3.0
 LABEL maintainer=acr-feedback@microsoft.com
 
 COPY docker-entrypoint.sh /usr/local/bin/
