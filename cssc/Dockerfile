@@ -1,9 +1,9 @@
 ARG acr_version=0.19
-ARG oras_version=1.3.3
+ARG oras_version=1.2.0
 FROM ghcr.io/oras-project/oras:v${oras_version} as build
-ARG copa_version=0.14.2
-ARG trivy_version=0.72.0
-ARG syft_version=1.49.0
+ARG copa_version=0.10.0
+ARG trivy_version=0.69.3
+ARG syft_version=1.11.1
 RUN apk add curl tar gzip
 RUN curl --retry 5 -fsSL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /tmp/bin v${syft_version}
 RUN curl --retry 5 -fsSL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /tmp/bin v${trivy_version}
